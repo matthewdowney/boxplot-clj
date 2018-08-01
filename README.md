@@ -1,14 +1,28 @@
 # boxplot-clj
 
-A Clojure library designed to ... well, that part is up to you.
+String box plots for numeric data.
+
 
 ## Usage
 
-FIXME
+```
+(require '[boxplot-clj.core :as box])
+
+(box/box-plot (repeatedly 10000 rand) 50)
+;; =>
+;; "             _______________________              
+;;  |-----------|           |           |------------|
+;;               ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯              
+;;  0.000068   0.25        0.51       0.75         1.0"
+ 
+(box/box-plot (repeatedly 10000 #(* (rand) (rand))) 50)
+;; => 
+;; "    ______________                                
+;;  |--|     |        |------------------------------|
+;;      ¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                
+;;  0.0000017 0.197  0.38                         0.99"
+```
 
 ## License
 
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License either version 1.0.
