@@ -6,6 +6,11 @@ String box plots for numeric data.
 ## Usage
 
 ```clojure
+(defproject ;; ...
+  :dependencies [[boxplot-clj "0.1.0"]])
+```
+
+```clojure
 (require '[boxplot-clj.core :as box])
 
 (box/box-plot (repeatedly 10000 rand) 50)
@@ -14,13 +19,6 @@ String box plots for numeric data.
 ;;  |-----------|           |           |------------|
 ;;               ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯              
 ;;  0.000068   0.25        0.51       0.75         1.0"
- 
-(box/box-plot (repeatedly 10000 #(* (rand) (rand))) 50)
-;; => 
-;; "    ______________                                
-;;  |--|     |        |------------------------------|
-;;      ¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                
-;;  0.0000017 0.197  0.38                         0.99"
 ```
 
 ## License
