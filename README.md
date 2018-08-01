@@ -5,7 +5,7 @@ String box plots for numeric data.
 
 ## Usage
 
-```
+```clojure
 (require '[boxplot-clj.core :as box])
 
 (box/box-plot (repeatedly 10000 rand) 50)
